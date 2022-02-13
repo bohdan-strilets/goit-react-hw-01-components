@@ -1,15 +1,13 @@
 import PropTypes from "prop-types";
 import defaultImage from "./defaultImage.png";
-import s from "../SocialProfile/SocialProfile.module.css";
+import s from "./SocialProfile.module.css";
 
 export default function Profile({
   username = "User Name",
   tag,
   location,
   avatar = defaultImage,
-  followers = 0,
-  views = 0,
-  likes = 0,
+  stats,
 }) {
   return (
     <div className={s.profile}>
@@ -29,15 +27,15 @@ export default function Profile({
       <ul className={s.stats}>
         <li className={s.item}>
           <span className={s.label}>Followers</span>
-          <span className={s.quantity}>{followers}</span>
+          <span className={s.quantity}>{stats.followers}</span>
         </li>
         <li className={s.item}>
           <span className={s.label}>Views</span>
-          <span className={s.quantity}>{views}</span>
+          <span className={s.quantity}>{stats.views}</span>
         </li>
         <li className={s.item}>
           <span className={s.label}>Likes</span>
-          <span className={s.quantity}>{likes}</span>
+          <span className={s.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -49,7 +47,9 @@ Profile.prototype = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };

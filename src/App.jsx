@@ -1,18 +1,28 @@
+import Section from "./components/Section/Section";
 import SocialProfile from "./components/SocialProfile/SocialProfile";
+import Statistics from "./components/Statistics/Statistics";
 import user from "./data/user.json";
+import uploadStats from "./data/uploadStats.json";
 
 export default function App() {
   return (
     <div>
-      <SocialProfile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
-      />
+      <Section title={"Task-1 'Social network profile'"}>
+        <SocialProfile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+      </Section>
+
+      <Section title={"Task-2 'Statistics section'"}>
+        <Statistics title="Upload stats" stats={uploadStats} />
+      </Section>
+      <Section>
+        <Statistics stats={uploadStats} />
+      </Section>
     </div>
   );
 }
