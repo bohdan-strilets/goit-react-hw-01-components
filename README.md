@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+## Task 1
+## Social network profile
+It is necessary to create a <Profile> component with which we could display information about the user of the social network.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The component must accept multiple props with user information:
+  - username — username
+  - tag — social network tag without @
+  - location - city and country
+  - avatar - link to the image
+  - stats - object with information about activity
+  
+## Task 2
+  
+## Statistics Section
+Create a <Statistics> component that would display statistics on transmitted props. For example, uploads to the cloud by file type, visits to a web page by users from different countries, financial expenses, etc.
 
-## Available Scripts
+The component must accept two props title and stats, which specify the title and the statistics object.
+ - title - is optional, and if it is not passed, the <h2> title markup should not be rendered.
+ - stats - an array of objects containing information about the statistics element. Can have any number of elements.
+ - You can skip the background color of the statistics element in the design, or create a function to generate a random color.
+ 
+## Task 3
+  
+## Friend list
+We need to create a <FriendList> component with which we could display information about the user's friends.
+The component must accept one friends prop, which is an array of friend objects.
 
-In the project directory, you can run:
+You need to create a <FriendListItem> component.
 
-### `npm start`
+The component must accept several props:
+  - avatar - link to the avatar
+  - name - friend's name
+  - isOnline - a boolean indicating the status of a friend, online or not.
+Depending on the isOnline prop, the span.status background color should change.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Task 4
+  
+## Transaction History
+It is necessary to create a transaction history component in the personal account of the Internet Bank.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The data for the list is available in JSON format in the transactions.json file. This is an array of objects, each object describes one transaction with the following properties:
+  - id — unique transaction ID
+  - type — transaction type
+  - amount - transaction amount
+  - currency - currency type
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+It is necessary to create a <TransactionHistory> component that accepts one prop items - an array of transaction objects from transactions.json. The component creates the table markup. Each transaction is a table row.
